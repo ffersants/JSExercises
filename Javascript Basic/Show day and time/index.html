@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ivz3fof.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #64321d;
+        }
+
+        div{
+            text-align: center;
+            font-size: 3.5vw;
+            font-family: philosopher, sans-serif;
+            color: #FCFB60;
+            text-shadow: 5px 5px black;
+        }
+
+        h1{
+            text-overflow: unset;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1 id="print-here"></h1>
+    </div>
+
+
+    <script>
+    function today(){    
+        hoje = Date();  
+
+        switch (hoje.slice(0,3)) {
+            case 'Mon' :
+                todayIs = 'Monday';
+            break;
+
+            case 'Tue' :
+                todayIs = 'Tuesday';
+            break;
+
+            case 'Wed' :
+                todayIs = 'Wednesday';
+            break;
+
+            case 'Thu' :
+                todayIs = 'Thursday';
+            break;
+
+            case 'Fri' :
+                todayIs = 'Friday';
+            break;
+
+            case 'Sat' :
+                todayIs = 'Saturday';
+            break;
+
+            case 'Sun' :
+                todayIs = 'Sunday';
+            break
+        }
+
+        todayInFunction = new Date;
+        hours = todayInFunction.getHours();
+        if (hours < 10 && hours < 12){
+            hours = `0${hours} AM`;
+        } else{
+            hours = hours + 'PM';
+        }
+        minutes = todayInFunction.getMinutes();
+        minutes < 10 ? minutes = '0' + minutes : false; 
+        
+        seconds = todayInFunction.getSeconds();
+        seconds < 10 ? seconds = '0' + seconds : false;
+        
+        console.log(`Current time is: ${hours} : ${minutes} : ${seconds}`);
+        
+        printHere = document.getElementById("print-here");
+        printHere.innerHTML = `Today is ${todayIs} <br> Current time is: ${hours} : ${minutes} : ${seconds}`;
+    }
+
+        setInterval(
+            () => {
+                today()
+            }, 1000
+        )
+    </script>
+</body>
+</html>
