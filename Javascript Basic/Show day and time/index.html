@@ -43,52 +43,25 @@
 
     <script>
     function today(){    
-        hoje = Date();  
-
-        switch (hoje.slice(0,3)) {
-            case 'Mon' :
-                todayIs = 'Monday';
-            break;
-
-            case 'Tue' :
-                todayIs = 'Tuesday';
-            break;
-
-            case 'Wed' :
-                todayIs = 'Wednesday';
-            break;
-
-            case 'Thu' :
-                todayIs = 'Thursday';
-            break;
-
-            case 'Fri' :
-                todayIs = 'Friday';
-            break;
-
-            case 'Sat' :
-                todayIs = 'Saturday';
-            break;
-
-            case 'Sun' :
-                todayIs = 'Sunday';
-            break
-        }
-
+        
         todayInFunction = new Date;
+
+        var day = todayInFunction.getDay();//returns number 0 = sunday and so on...
+        var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+        todayIs = daylist[day];
+
         hours = todayInFunction.getHours();
         if (hours < 10 && hours < 12){
             hours = `0${hours} AM`;
         } else{
             hours = hours + 'PM';
         }
+        
         minutes = todayInFunction.getMinutes();
         minutes < 10 ? minutes = '0' + minutes : false; 
         
         seconds = todayInFunction.getSeconds();
         seconds < 10 ? seconds = '0' + seconds : false;
-        
-        console.log(`Current time is: ${hours} : ${minutes} : ${seconds}`);
         
         printHere = document.getElementById("print-here");
         printHere.innerHTML = `Today is ${todayIs} <br> Current time is: ${hours} : ${minutes} : ${seconds}`;
