@@ -23,6 +23,10 @@ function calcularInputs(){
     triangleArea = Math.sqrt(potencia*((potencia-side0)*(potencia-side1)*(potencia-side2)));
     
     showResult = document.getElementById("result");
+    showResult.className = ` formatar-resultado`
     showResult.textContent = triangleArea;
     
+
+   // window.location.assign(window.location.pathname + triangleArea)
+
 }
