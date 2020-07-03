@@ -14,19 +14,37 @@ function calcularInputs(){
 
     for(i=0;i<3;i++){
         triangleData.push(document.getElementById(`side${i}`).value)
+        
         Number(triangleData[i]) 
-        potencia += (triangleData[i])     
+       
+        if(triangleData[i]<=0 || triangleData[i] === ''){
+            console.log(i)
+            inputInvalid(i)
+        } 
     }
-
-    potencia = potencia / 2;
-    [side0, side1, side2] = triangleData
-    triangleArea = Math.sqrt(potencia*((potencia-side0)*(potencia-side1)*(potencia-side2)));
     
-    showResult = document.getElementById("result");
-    showResult.className = ` formatar-resultado`
-    showResult.textContent = triangleArea;
+
+    function inputValid(){
+        potencia += (triangleData[i]) 
+        potencia = potencia / 2;
+        [side0, side1, side2] = triangleData
+        triangleArea = Math.sqrt(potencia*((potencia-side0)*(potencia-side1)*(potencia-side2)));
+
+        showResult = document.getElementById("result");
+        showResult.className = `formatar-resultado`
+        showResult.textContent = triangleArea;
+    }
+       
+   
     
 
    // window.location.assign(window.location.pathname + triangleArea)
-
 }
+
+function inputInvalid(idInput){
+    inputIsInvalid = document.getElementById(`side${idInput}`)
+    inputIsInvalid.className += ' is-invalid '
+}
+
+
+    

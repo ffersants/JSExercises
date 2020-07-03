@@ -1,13 +1,21 @@
-#result{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.result{
+    filter: blur(50px);
+}
+
+.formatar-resultado{
     background-color: rgb(194, 194, 194);
     height: 50px;
-    border-radius: 2em;
+    border-radius: 1em;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     filter: blur(2);
+    transition: all 0.8s;
 }
 
-.formatar-resultado{
-}
