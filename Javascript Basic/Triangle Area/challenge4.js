@@ -14,22 +14,30 @@ function customValidation(event){
     field.setCustomValidity("uba uba") 
     //lógica para verificar se existem erros
     
-
+//essa funcao eu nao entendi
     function verifyErrors(){
         let foundError = false;
+
         for ( let error in field.validity){
             
             if ( error != "customError" && field.validity[error]){
-                foundError = error;
+                foundError = error;//so vai retornar um outro true referente ao atributo valueMissing
             }
-            
+
             return foundError;
         }
     }
 
-    const error = verifyErrors();
+    const error = verifyErrors()
+    console.log("Erro existe: " + error)
 
-    console.log(error)
+    if (error){
+        field.setCustomValidity("Este campo eh obrigatorio!")
+    } else {
+        field.setCustomValidity("")
+    }
+
+    
 }
 
 document.querySelector("form").addEventListener("submit", event =>{
