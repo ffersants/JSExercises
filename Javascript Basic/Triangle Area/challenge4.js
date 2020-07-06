@@ -1,50 +1,40 @@
-document.addEventListener('keydown', checkKey);
+const fields = document.querySelectorAll("[required]");
 
-function checkKey(e){
-    e.key === "Enter" ? calcularInputs() :  false
+for ( field of fields ){
+    field.addEventListener("invalid", customValidation);
+    //"invalid" é tido como um evento que é disparado 
+    //quando o input possui o atributo required e no entanto é omitido
+    
+    //The invalid event fires when a submittable element has been 
+    //checked for validity and doesn't satisfy its constraints.
 }
 
-calcular = document.getElementById("calcular");
-calcular.addEventListener("click", calcularInputs, false);
+function customValidation(event){
+    const field = event.target// com isso temos uma referência ao objeto que enviou o evento
+    field.setCustomValidity("uba uba") 
+    //lógica para verificar se existem erros
     
-function calcularInputs(){
 
-    triangleData = [];
-    potencia = 0;
-
-    for(i=0;i<3;i++){
-        triangleData.push(document.getElementById(`side${i}`).value)
-        
-        Number(triangleData[i]) 
-       
-        if(triangleData[i]<=0 || triangleData[i] === ''){
-            console.log(i)
-            inputInvalid(i)
-        } 
+    function verifyErrors(){
+        let foundError = false;
+        for ( let error in field.validity){
+            
+            if ( error != "customError" && field.validity[error]){
+                foundError = error;
+            }
+            
+            return foundError;
+        }
     }
-    
 
-    function inputValid(){
-        potencia += (triangleData[i]) 
-        potencia = potencia / 2;
-        [side0, side1, side2] = triangleData
-        triangleArea = Math.sqrt(potencia*((potencia-side0)*(potencia-side1)*(potencia-side2)));
+    const error = verifyErrors();
 
-        showResult = document.getElementById("result");
-        showResult.className = `formatar-resultado`
-        showResult.textContent = triangleArea;
-    }
-       
-   
-    
-
-   // window.location.assign(window.location.pathname + triangleArea)
+    console.log(error)
 }
 
-function inputInvalid(idInput){
-    inputIsInvalid = document.getElementById(`side${idInput}`)
-    inputIsInvalid.className += ' is-invalid '
-}
-
-
-    
+document.querySelector("form").addEventListener("submit", event =>{
+    console.log("enviado");
+    event.preventDefault()//cancels the event if it is cancelable, 
+    //meaning that the default action that belongs to the event will not occur.
+    //Clicking on a "Submit" button, prevent it from submitting a form
+})

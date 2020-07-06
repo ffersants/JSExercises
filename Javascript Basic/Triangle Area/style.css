@@ -19,3 +19,40 @@
     transition: all 0.8s;
 }
 
+button{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /*
+The appearance property is used for one of two reasons:
+
+1 To apply platform specific styling to an element 
+that doesn’t have it by default
+
+2 To remove platform specific styling to an element 
+that does have it by default
+    */
+}
+
+input{
+    background-color: transparent!important;
+}
+
+.input{
+    position: relative;
+}
+
+input ~ label{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: .4s;
+    z-index: -5;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+    transform: translateY(-28px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
