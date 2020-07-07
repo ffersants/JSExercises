@@ -41,8 +41,32 @@ function customValidation(event){
 }
 
 document.querySelector("form").addEventListener("submit", event =>{
-    console.log("enviado");
-    event.preventDefault()//cancels the event if it is cancelable, 
+    operation();
+    //cancels the event if it is cancelable, 
     //meaning that the default action that belongs to the event will not occur.
     //Clicking on a "Submit" button, prevent it from submitting a form
+    
+    
 })
+
+function operation(){
+    event.preventDefault()
+    inputs = [];
+    for( i=1 ; i<4 ; i++ ){
+        inputs[i] = document.getElementById(`side${i}`).value;
+    }
+
+    [branco, side1, side2, side3] = inputs;
+    console.log(side1)
+    console.log(side2)
+    console.log(side3)
+
+    var s = (side1 + side2 + side3)/2;
+    var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
+
+    result = document.getElementById("result");
+    result.textContent = area;
+    result.className = 'formatar-resultado'
+    
+
+}
