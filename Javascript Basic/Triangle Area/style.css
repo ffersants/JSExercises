@@ -41,6 +41,12 @@ input{
 
 .input{
     position: relative;
+    margin-bottom: 0!important;
+}
+
+small{
+    padding-top: 0!important;
+    margin-top: 0!important;
 }
 
 input ~ label{
@@ -57,3 +63,5 @@ input:valid ~ label{
     font-size: 0.8em;
     letter-spacing: 0.1em;
 }
+
+
