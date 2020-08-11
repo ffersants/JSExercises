@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    font-size: 18px;
+}
+main{
+    text-align: center;
+}
+
+button{
+    /*rem usa como medida o font-size declarado no body do documento */
+    margin-top: 1.3rem;
+}
+
+input{
+    height: 2.5rem;
+}
+
+#numbers button, #go{
+    padding: 1rem;
+}
