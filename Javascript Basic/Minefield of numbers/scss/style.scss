@@ -1,0 +1,80 @@
+$bg-color: rgb(249, 247, 206);
+$btn-color: orange;
+$shadow-btn-color: rgba(208, 161, 73, 0.749);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &:active, &:focus{
+        outline: none;
+    }  
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-color;
+}
+
+main{
+    text-align: center;
+    
+    input{
+        width: 20em;
+        height: 6em;
+        text-align: center;
+        border-radius: 3em;
+        padding: 0;
+        margin-bottom: 2em; 
+    }
+
+}
+
+#numbers button{
+    font-size: 1.5em;
+    width: 1.9em;
+    height: 1.9em;
+    background-color: $btn-color;
+    color: white;
+    border: none;
+    border-radius: 1em;  
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 0.8em;
+    &:hover{
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 5px $shadow-btn-color;
+    }
+    &:active{
+        transition: 0.1s;
+        background-color: red;
+    }
+}
+
+#go{
+    width: 8em;
+    height: 1.5em;
+    border-radius: 3em;
+    font-size: 2em;
+    background-color: rgb(172, 77, 172);
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(147, 60, 147);
+    }
+    &:active{
+        width: 7.9em;
+        height: 1.4em;
+    }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
