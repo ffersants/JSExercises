@@ -24,15 +24,20 @@ main{
     text-align: center;
     
     input{
-        width: 20em;
-        height: 6em;
+        font-size: 2em;
+        height: 2em;
+        width: 5.5em;
+        // width: 20em;
+        // height: 6em;
         text-align: center;
         border-radius: 3em;
         padding: 0;
-        margin-bottom: 2em; 
+        margin-bottom: 1em; 
     }
 
 }
+
+
 
 #numbers button{
     font-size: 1.5em;
@@ -69,10 +74,11 @@ main{
         background-color: rgb(147, 60, 147);
     }
     &:active{
-        width: 7.9em;
-        height: 1.4em;
+        background-color: rgb(172, 77, 172);;
     }
 }
+
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 

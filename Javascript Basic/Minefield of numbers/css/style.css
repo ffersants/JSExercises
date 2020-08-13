@@ -1,41 +1,43 @@
-/* line 5, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-/* line 9, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 *:active, *:focus {
   outline: none;
 }
 
-/* line 14, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 html, body {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #f9f7ce;
 }
 
-/* line 23, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 main {
   text-align: center;
 }
 
-/* line 26, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 main input {
-  width: 20em;
-  height: 6em;
+  font-size: 2em;
+  height: 2em;
+  width: 5.5em;
   text-align: center;
   border-radius: 3em;
   padding: 0;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
-/* line 37, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #numbers button {
   font-size: 1.5em;
   width: 1.9em;
@@ -44,24 +46,25 @@ main input {
   color: white;
   border: none;
   border-radius: 1em;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
   margin-bottom: 0.8em;
 }
 
-/* line 48, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #numbers button:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 5px rgba(208, 161, 73, 0.749);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 10px 5px rgba(208, 161, 73, 0.749);
+          box-shadow: 0px 10px 5px rgba(208, 161, 73, 0.749);
 }
 
-/* line 52, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #numbers button:active {
+  -webkit-transition: 0.1s;
   transition: 0.1s;
   background-color: red;
 }
 
-/* line 58, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #go {
   width: 8em;
   height: 1.5em;
@@ -70,26 +73,22 @@ main input {
   background-color: #ac4dac;
   color: white;
   border: none;
+  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   cursor: pointer;
 }
 
-/* line 68, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #go:hover {
   background-color: #933c93;
 }
 
-/* line 71, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 #go:active {
-  width: 7.9em;
-  height: 1.4em;
+  background-color: #ac4dac;
 }
 
-/* line 76, ../../../../../Users/ditecsstm/Documents/GitHub/JSExercises/Javascript Basic/Minefield of numbers/scss/style.scss */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /*# sourceMappingURL=style.css.map */
