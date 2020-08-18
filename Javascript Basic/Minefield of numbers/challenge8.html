@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./challenge8.js"></script>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Minefield of numbers</title>
 </head>
 <body>
-    <main>
+    
+    <main> 
         <input type="number" name="" id="number-inputer">
         <div id="numbers">
             <button>0</button>
@@ -22,8 +25,11 @@
             <button>8</button>
             <button>9</button>
         </div>
+        
         <br>
-            <button id="go" onclick="checkInput()">Go!</button>
+        
+        <button id="go" onclick="checkInput()">Go!</button>
     </main>
+    
 </body>
 </html>

@@ -1,30 +1,52 @@
 inputArea = document.getElementById("number-inputer");
-
-document.addEventListener('click', () => {
+numbers = document.getElementById("numbers")
+document.addEventListener("keydown", () => {
+    event.key === "Enter" ? checkInput() : setInput(event.key);
+})
+/*para capturar todos os clicks no buttons com num, está sendo aplicada a tática de bubbling
+descrita na página --> https://javascript.info/bubbling-and-capturing
+*/
+numbers.addEventListener('click', (e) => {
     shooter = (event.target);
-    setInput(shooter)
+    shooter.tagName === 'BUTTON' ? setInput(shooter.textContent) : console.warn("It's not a number!");
 }
 );
 
 
 function setInput(element){
-    element = (shooter.textContent);
-    element = parseInt(element);
-    
-    element === NaN ? false : inputArea.value = element;
+    element = parseInt(element);    
+    inputArea.value = element;
 }
 
 function checkInput(){
     if (inputArea.value == ''){
-        alert('insira um número')
+        Swal.fire({
+            title: "Ops! It's empty",
+            text: "Insert a number to continue",
+            icon: "warning",
+            confirmButtonText: "Ok"
+        })
     } 
     else {
         randomNumber = Math.floor(Math.random() * 10);
 
         if(randomNumber == inputArea.value){
-            alert("Parabéns! Você acaba de ganhar uma chance de ganhar mil reais!!")
+            Swal.fire({
+                title: 'Good work!',
+                text: "Ihuu, it matched!",
+                icon: 'success',
+                confirmButtonText: 'Great!'
+              })
+            inputArea.value = '';
         } else{
-            alert('aaah não foi dessa vez..')
+            Swal.fire({
+                title: 'Not matched!',
+                text: "Unfortunately it wasn't your turn",
+                icon: 'error',
+                confirmButtonText: 'Try again'
+            })
+            inputArea.value = '';
         }
     }//if ends
 }
+
