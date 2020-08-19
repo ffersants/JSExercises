@@ -43,7 +43,7 @@ function checkInput(){
                 icon: 'success',
                 confirmButtonText: 'Great!'
               })
-            inputArea.value = '';
+            
         } else{
             Swal.fire({
                 title: 'Not matched!',
@@ -51,7 +51,7 @@ function checkInput(){
                 icon: 'error',
                 confirmButtonText: 'Try again'
             })
-            inputArea.value = '';
+            
         }
     }//if ends
 }
