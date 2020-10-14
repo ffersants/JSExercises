@@ -8,8 +8,8 @@ console.log(extension)
 console.log(filename.split(".").pop())
 
 
-// o metodo split separa uma string em um array de string, tomando como referencia o parametro passado, que eh tido como o separador
-
+// o metodo split separa uma string em um array de string, tomando como referencia o parametro passado, que eh tido como o separador, ele 
+// eh equivalente ao explode do PHP
 //Quando encontrado, o separador é removido da string e as substrings são retornadas em um array. 
 frase1 = "frase-dividida-com-base-nos-hifens";
 console.log(frase1.split("-"))
